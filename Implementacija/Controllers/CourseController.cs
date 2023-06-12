@@ -212,7 +212,7 @@ namespace ooadproject.Controllers
             List<StudentCourseInfo> list = await _courseManager.RetrieveStudentCourseInfo(id);
             ViewData["Info"] = list;
             ViewData["Maximum"] =  await _courseManager.GetMaximumPoints(id);
-            ViewData["NumberOfPassed"] = await _courseManager.GetNumberOfPassed(list);
+            ViewData["NumberOfPassed"] = _courseManager.GetNumberOfPassed(list);
             ViewData["NumberOfStudents"] = students.Count;
 
 

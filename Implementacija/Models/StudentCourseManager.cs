@@ -51,19 +51,11 @@ namespace ooadproject.Models
             return results;
         }
 
-        public async Task<int> GetNumberOfPassed(List<StudentCourseInfo> temp)
+        public int GetNumberOfPassed(List<StudentCourseInfo> studentCourses)
         {
-            //For each item, check if grade is 6 or above
-            int count = 0;
-            foreach (var item in temp)
-            {
-                if(item.Grade >= 6)
-                {
-                    count++;
-                }
-            }
-            return count;
+            return studentCourses.Count(sc => sc.Grade >= 6);
         }
+
         public int EvaluateGrade(double points)
         {
             if (points < 0)
